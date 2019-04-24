@@ -7,13 +7,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8CEFFC5D-A4CC-4C05-B689-6BCDE0550D59}</ProjectGuid>
+    <ProjectGuid>{943822EC-C584-45A0-9A95-48D88F3AB76A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>LearnCS</RootNamespace>
-    <AssemblyName>LearnCS</AssemblyName>
+    <RootNamespace>LearnCollections</RootNamespace>
+    <AssemblyName>LearnCollections</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -59,9 +60,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TestGenericClass.cs" />
-    <Compile Include="GenericsClass.cs" />
-    <Compile Include="TestClassLearn.cs" />
+    <Compile Include="CollectionsTests.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
