@@ -12,7 +12,7 @@ namespace WebDriverTests
         private WindowsDriver<WindowsElement> winappDriver;
         private DesiredCapabilities appCapabilities;
         private Process winappListenerProcess;
-        [Fact]
+        [Fact (Skip = "skipping as devoptions not exists")]
         [Trait("Category", "p0")]
         public void VerifyNotepadOperations()
         {
@@ -41,7 +41,7 @@ namespace WebDriverTests
             }
         }
 
-        [Fact]
+        [Fact(Skip = "skipping as devoptions not exists")]
         [Trait("Category", "p0")]
         public void VerifyControlPanel()
         {
