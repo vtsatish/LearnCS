@@ -25,8 +25,12 @@ namespace LearnCollections
                     EmpId = 124
                 }
             };
-            eList.Add(new Employee { Name = "Addedentry", EmpId = 4231 });
+            Employee newemp = new Employee { Name = "Addedentry", EmpId = 4231 };
+            eList.Add(newemp);
             Assert.Equal(3, eList.Count);
+            eList.RemoveAt(0);
+            Assert.Equal(2, eList.Count);
+            Assert.Contains(newemp, eList);
         }
         [Fact]
         public void QueueTestMethod()
@@ -38,6 +42,7 @@ namespace LearnCollections
 
             Assert.NotEqual(3, eQueue.Peek());
             Assert.Equal(1,eQueue.Dequeue());
+            Assert.Equal(2, eQueue.Peek());
             Assert.NotEmpty(eQueue);
 
         }
