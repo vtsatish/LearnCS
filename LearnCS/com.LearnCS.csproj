@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataProcessingClass.cs" />
     <Compile Include="TestGenericClass.cs" />
     <Compile Include="GenericsClass.cs" />
     <Compile Include="TestClassLearn.cs" />
