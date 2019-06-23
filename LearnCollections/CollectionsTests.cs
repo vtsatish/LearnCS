@@ -46,5 +46,19 @@ namespace LearnCollections
             Assert.NotEmpty(eQueue);
 
         }
+
+        [Fact]
+        public void StackTestMethod()
+        {
+            Stack<string> eStack = new Stack<string>();
+            eStack.Push("Hello");
+            eStack.Push("New");
+            eStack.Push("test");
+
+            Assert.NotEqual(4, eStack.Count);
+            eStack.Pop();
+            Assert.Equal("New", eStack.Peek());
+            Assert.Equal(2, eStack.Count);
+        }
     }
 }
