@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameCore", "GameCore\GameCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDriverTests", "WebDriverTests\WebDriverTests.csproj", "{2766E822-F63B-458E-A28F-E09BAF31DD8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnCollections", "LearnCollections\LearnCollections.csproj", "{943822EC-C584-45A0-9A95-48D88F3AB76A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnAdvancedCS", "LearnCollections\LearnAdvancedCS.csproj", "{943822EC-C584-45A0-9A95-48D88F3AB76A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnRestTest", "LearnRestTest\LearnRestTest.csproj", "{AE31A54C-C455-4BF0-AA7E-11AE9881DD3B}"
 EndProject

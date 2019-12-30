@@ -31,6 +31,9 @@ namespace LearnCollections
             eList.RemoveAt(0);
             Assert.Equal(2, eList.Count);
             Assert.Contains(newemp, eList);
+            Assert.Equal(124, eList[0].EmpId);
+            eList.Add(newemp);
+            Assert.Equal(3, eList.Count);
         }
         [Fact]
         public void QueueTestMethod()
