@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace LearnCollections
+namespace LearnAdvancedCS
 {
     public class NodeTests
     {

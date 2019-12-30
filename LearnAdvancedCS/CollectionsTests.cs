@@ -3,7 +3,7 @@ using System.Collections.Generic;
 //using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Xunit;
 
-namespace LearnCollections
+namespace LearnAdvancedCS
 {
     public class CollectionsTests
     {

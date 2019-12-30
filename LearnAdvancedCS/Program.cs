@@ -7,7 +7,7 @@ using System.Linq;
 using System.Collections;
 using LearnCS;
 
-namespace LearnCollections
+namespace LearnAdvancedCS
 {
     public class Program
     {

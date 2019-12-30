@@ -1,4 +1,4 @@
-﻿namespace LearnCollections
+﻿namespace LearnAdvancedCS
 {
     public class Employee
     {
