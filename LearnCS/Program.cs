@@ -10,7 +10,14 @@ namespace com.LearnCS
     public class Person
     {
         public string Name = "Default Name";
-        public DateTime BirthDate { get; set; }
+        private DateTime _birthday;
+        public DateTime BirthDate
+        {
+            get { return _birthday; }
+            set { _birthday = value; }
+        }
+        public String LastName { get; set; }
+        public int Ssid { get; set; }
         public double Age
         {
             get
@@ -132,6 +139,8 @@ namespace com.LearnCS
         public static void TestStaticObjectreturn()
         {
             var personvariable = Person.Parse("JOHN");
+            personvariable.BirthDate = new DateTime(2017, 1, 18);
+            Console.WriteLine("Age of " + personvariable.Name + " is " + personvariable.Age);
             personvariable.Introduce("Mosh");
         }
 

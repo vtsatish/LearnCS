@@ -41,6 +41,7 @@ namespace WebDriverTests
                 logInPageObject.loginButton.Click();
                 Thread.Sleep(5000);
                 Assert.True(homePageObject.companyLogo.Displayed);
+                //homePageObject.dashBoard.Click();
             }
             finally
             {

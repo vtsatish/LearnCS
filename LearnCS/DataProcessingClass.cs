@@ -10,7 +10,7 @@ namespace LearnCS
     {
         public void WordCount(String Sentence)
         {
-            List<String> wordList = Sentence.Split(null).ToList();
+            List<String> wordList = Sentence.Split(' ').ToList();
             Dictionary<String, int> mydict = new Dictionary<String, int>();
 
             foreach (String str in wordList)

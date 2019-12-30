@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataProcessingClass.cs" />
+    <Compile Include="IntermediateStudent.cs" />
     <Compile Include="TestGenericClass.cs" />
     <Compile Include="GenericsClass.cs" />
     <Compile Include="TestClassLearn.cs" />

@@ -11,6 +11,7 @@ namespace WebDriverTests
     {
         private IWebDriver webDriver;
         public IWebElement companyLogo => webDriver.FindElement(By.Id("company_logo"));
+        //public IWebElement dashBoard => webDriver.FindElement(By.CssSelector("input[title=Dashboard]"));
 
         public HomePage(IWebDriver argWebDriver)
         {
