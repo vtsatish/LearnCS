@@ -27,7 +27,7 @@ namespace Learnoops
         [Fact]
         public void testAbstractClass()
         {
-            ActualImpl actl = new ActualImpl();
+            AbstractClassImpl actl = new ActualImpl();
             Xunit.Assert.False(actl.evaluate());
             actl.num = 100;
             Xunit.Assert.False(actl.evaluate());
