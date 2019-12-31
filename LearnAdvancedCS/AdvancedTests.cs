@@ -26,10 +26,11 @@ namespace LearnAdvancedCS
         [Fact]
         public void ActionDelegateTest()
         {
-            var delegatorObject = new Delegator();
+            //var delegatorObject = new Delegator();
             var calleeObject = new Callee("Hello");
             Action<string> adg = calleeObject.ReplaceImage;
-            delegatorObject.ActionProcess("Change", adg);
+            //delegatorObject.ActionProcess("Change", adg);
+            adg("Change");
             Xunit.Assert.Equal("Change", calleeObject.GetImage());
 
         }
