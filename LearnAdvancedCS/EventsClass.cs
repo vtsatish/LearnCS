@@ -21,7 +21,6 @@ namespace LearnAdvancedCS
         public void Encode()
         {
             this.Title = this.Title + " Encoded on " + this.ReleaseDate.ToString();
-            Thread.Sleep(3000);
             OnVideoEncoded();
         }
 
@@ -34,7 +33,9 @@ namespace LearnAdvancedCS
             if(VideoEncodedNotification != null && VideoGenericNotification != null)
             {
                 VideoEncodedNotification(this, new VideoEventArgs() { VideoType = this.Title });
+                Thread.Sleep(3000);
                 VideoGenericNotification(this, new VideoEventArgs());
+                Thread.Sleep(3000);
             }
 
         }
