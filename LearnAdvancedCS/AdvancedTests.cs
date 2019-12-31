@@ -74,7 +74,7 @@ namespace LearnAdvancedCS
             Assert.True(hasOld);
         }
         [Fact]
-        public void testEvents()
+        public void TestEvents()
         {
             var engVideo = new Video("MI", DateTime.Now);//publisher
             var checkMail = new MailService(); //subscriber1
