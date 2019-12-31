@@ -26,10 +26,11 @@ namespace LearnAdvancedCS
         [Fact]
         public void ActionDelegateTest()
         {
-            var delegatorObject = new Delegator();
+            //var delegatorObject = new Delegator();
             var calleeObject = new Callee("Hello");
             Action<string> adg = calleeObject.ReplaceImage;
-            delegatorObject.ActionProcess("Change", adg);
+            //delegatorObject.ActionProcess("Change", adg);
+            adg("Change");
             Xunit.Assert.Equal("Change", calleeObject.GetImage());
 
         }
@@ -71,6 +72,24 @@ namespace LearnAdvancedCS
             bool hasOld = oldEmployees.Count > 0 ? true : false;
             Assert.Single(oldEmployees);
             Assert.True(hasOld);
+        }
+        [Fact]
+        public void testEvents()
+        {
+            var engVideo = new Video("MI", DateTime.Now);//publisher
+            var checkMail = new MailService(); //subscriber1
+            var checkMessage = new MessageService(); //subscriber2
+
+            engVideo.VideoEncodedNotification += checkMail.OnVideoEncoded;
+            engVideo.VideoEncodedNotification += checkMessage.OnVideoEncoded;
+
+            engVideo.VideoGenericNotification += checkMail.OnGenericEncoded;
+            engVideo.VideoGenericNotification += checkMessage.OnGenericEncoded;
+
+            engVideo.Encode();
+            Assert.Equal(4, VideoEventArgs.count);
+
+
         }
 
     }
