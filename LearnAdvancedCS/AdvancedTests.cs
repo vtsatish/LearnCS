@@ -81,7 +81,7 @@ namespace LearnAdvancedCS
             var checkMessage = new MessageService(); //subscriber2
 
             engVideo.VideoEncodedNotification += checkMail.OnVideoEncoded;
-            engVideo.VideoEncodedNotification += checkMessage.OnVideoEncoded;
+            engVideo.VideoEncodedNotification += checkMessage.OnGenericEncoded;
 
             engVideo.VideoGenericNotification += checkMail.OnGenericEncoded;
             engVideo.VideoGenericNotification += checkMessage.OnGenericEncoded;
