@@ -73,6 +73,24 @@ namespace LearnAdvancedCS
             Assert.Single(oldEmployees);
             Assert.True(hasOld);
         }
+        [Fact]
+        public void testEvents()
+        {
+            var engVideo = new Video("MI", DateTime.Now);//publisher
+            var checkMail = new MailService(); //subscriber1
+            var checkMessage = new MessageService(); //subscriber2
+
+            engVideo.VideoEncodedNotification += checkMail.OnVideoEncoded;
+            engVideo.VideoEncodedNotification += checkMessage.OnVideoEncoded;
+
+            engVideo.VideoGenericNotification += checkMail.OnGenericEncoded;
+            engVideo.VideoGenericNotification += checkMessage.OnGenericEncoded;
+
+            engVideo.Encode();
+            Assert.Equal(4, VideoEventArgs.count);
+
+
+        }
 
     }
 }

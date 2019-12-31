@@ -80,6 +80,7 @@
     <Compile Include="CollectionsTests.cs" />
     <Compile Include="DelegateClasses.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="EventsClass.cs" />
     <Compile Include="LambdaClasses.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="NodeTests.cs" />
