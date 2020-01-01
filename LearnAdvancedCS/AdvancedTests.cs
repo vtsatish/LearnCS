@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using Xunit;
 
@@ -57,7 +59,7 @@ namespace LearnAdvancedCS
                 },
                 new Employee
                 {
-                    Name = "Jamesnew",
+                    Name = "Harry",
                     EmpId = 125
                 },
                 new Employee
@@ -72,9 +74,23 @@ namespace LearnAdvancedCS
             bool hasOld = oldEmployees.Count > 0 ? true : false;
             Assert.Single(oldEmployees);
             Assert.True(hasOld);
+
+            var newEmployees = empList
+                .Where(e => e.EmpId > 100)
+                .OrderByDescending(e => e.Name);
+            Assert.Equal(3, newEmployees.Count());
+
+            var empNames =
+                from e in empList
+                where e.EmpId > 0
+                orderby e.Name
+                select e.Name;
+            Assert.Contains("Harry", empNames);
+
+            Assert.Equal(90, empList.Min(e => e.EmpId));
         }
         [Fact]
-        public void testEvents()
+        public void TestEvents()
         {
             var engVideo = new Video("MI", DateTime.Now);//publisher
             var checkMail = new MailService(); //subscriber1
@@ -88,7 +104,57 @@ namespace LearnAdvancedCS
 
             engVideo.Encode();
             Assert.Equal(4, VideoEventArgs.count);
+        }
+        [Fact]
+        public void TestExtension()
+        {
+            string post = "This is a sentence with many words";
+            Xunit.Assert.Equal("This is", post.Shorten(2));
+        }
+        [Fact]
+        public void TestNullable()
+        {
+            DateTime? newDate = null;
 
+            Assert.Null(newDate);
+            
+            try
+            {
+                Debug.WriteLine(newDate.Value);
+            }
+            catch (InvalidOperationException ex)
+            {
+                Debug.WriteLine("In exception\n\n\n" + ex.Message);
+            }
+
+            
+            newDate = DateTime.Now;
+            Assert.NotNull(newDate);
+
+            
+        }
+
+        [Fact(Skip = "specific reason")]
+        public void TestExceptions()
+        {
+            StreamWriter sr = null;
+
+
+            try
+            {
+                sr = new StreamWriter(new FileStream("C:\\exception.log", FileMode.OpenOrCreate, FileAccess.ReadWrite));
+                throw new Exception("Intentional exception");
+            }
+            catch (Exception ex)
+            {
+                throw new DateTimeException("Access of null DateTime", ex);
+            }
+            finally
+            {
+                if (sr != null)
+                    sr.Dispose();
+
+            }
 
         }
 
