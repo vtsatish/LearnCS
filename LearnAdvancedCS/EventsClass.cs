@@ -79,4 +79,36 @@ namespace LearnAdvancedCS
         public static int count;
     }
 
+    public static class StringExtensions
+    {
+        public static string Shorten(this string str, int numwords)
+        {
+            string shortstr = "error";
+            if(numwords <= 0 || str.Length <= 0)
+            {
+                return "";
+            }
+            var wordList = str.Split(' ');
+            if(wordList.Count() <= numwords)
+            {
+                return str;
+            }
+            var shortList = wordList.Take(numwords);
+
+            shortstr = String.Join(" ", shortList);
+
+            return shortstr;
+
+        }
+    }
+
+    public class DateTimeException : Exception
+    {
+        public DateTimeException(string str, Exception customException)
+            : base (str,customException)
+        {
+
+        }
+    }
+
 }
