@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace LearnAdvancedCS
@@ -158,5 +159,14 @@ namespace LearnAdvancedCS
 
         }
 
+        [Fact]
+        public void TestAsynAwait()
+        {
+            SyncClass sc = new SyncClass();
+            sc.RunParallelTests();
+            Assert.Equal(11, sc.counter);
+        }
+
     }
+
 }
