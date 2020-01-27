@@ -9,18 +9,24 @@ namespace LearnAdvancedCS
 {
     public class NodeTests
     {
-        [Fact]
-        public void reverseList()
+        internal Node ReverseList(Node argNode)
         {
-            Node headOfList = createList();
-            Xunit.Assert.Equal(0, headOfList.num);
+            Node headOfList = argNode;
+            Node prevNode = null;
+            Node tmpNode = null;
             Node current = headOfList;
+
             while (current.next != null)
             {
-                current = current.next;
+                tmpNode = current.next;
+                current.next = prevNode;
+                prevNode = current;
+                current = tmpNode;
             }
-            Xunit.Assert.Equal(5, current.num);
+            current.next = prevNode;
+            headOfList = current;
 
+            return headOfList;
         }
 
         internal Node createList()
@@ -33,6 +39,19 @@ namespace LearnAdvancedCS
                 current = current.next;
             }
             return Head;
+        }
+
+        [Fact]
+        public void TestNodeList()
+        {
+            Node headOfList = createList();
+            Xunit.Assert.Equal(0, headOfList.num);
+
+            headOfList = ReverseList(headOfList);
+
+            Xunit.Assert.Equal(5, headOfList.num);
+            Xunit.Assert.Equal(4, headOfList.next.num);
+
         }
 
     }
